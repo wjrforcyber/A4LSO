@@ -1,0 +1,157 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Representations of Logic Functions}
+\subsection{Truth table}
+Truth table(TT) is essential in logic synthesis, pay good attention even if you think this is simple and easy to understand. Exact simulation is heavily used in logic synthesis tool ABC and mockturtle, you will see what happens behind the simulation method after solve following questions.
+
+\subsubsection{Direct view}
+This section gives a preview of TT, every answer should draw by hand, literal by literal, step by step.
+\begin{problem}{TT related}{problem-label-TT}
+\begin{enumerate}[(a)]
+    \item Write down a full truth table for a 4 variable boolean function(complete boolean function), how many different combination of the elementary variables could you list here? And what about \emph{n} variables? How many input combination can you get?
+    
+    \item What you write above is the all possibilities of the elementary variables combination, from a function perspective, how many different functions could you produce under these combination? And why?
+
+    \item Can you show an example of an incomplete boolean function in TT? If so, can you try to simplify and show a better representation of this specific function in TT? If so, can you related the simplification to the don't care concept?
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+\subsubsection{Coding Practice}
+After finishing writing, look what you have written, how do you write it? Is there any pattern on the full list? Write down the pattern you see, and if you are going to implement this TT in C/C++, what would you do? Can you find a way to optimize your implementation so that the TT could take as less memory as possible?
+
+\subsection{SOP/DNF \& POS/CNF}
+These concepts are easy but vital in later boolean optimization. It is better to compare and remember, since these two concepts are contrary.
+\begin{problem}{Expression}{problem-label-Expression}
+\begin{enumerate}[(a)]
+    \item Write down the De Morgan’s Law.
+    \item What is are the concept of literal/clause under the boolean context? Give an example.
+    \item What are SOP/DNF \& POS/CNF abbreviated for?
+    \item As we can see above, TT is canonical, now, try to give a boolean function \textit{f}, prove that SOP representation is not canonical.
+    \item Give an example and illustrate the SOP in cubes context.
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsection{CNF \& SAT solver}
+\subsubsection{SAT}
+SAT solver could be integrated into logic synthesis tool to power the optimization. Know the basic concepts under the hood will help with a good use.
+\begin{problem}{SAT}{problem-label-2}
+\begin{enumerate}[(a)]
+    \item Explain why use CNF in SAT? Give an problem example that SAT can solve.
+    \item SAT is optimization problem or decision problem? Can you illustrate the difference between optimization problem and decision problem?
+    \begin{itemize}
+        \item This question belongs to complexity classes, if you are not familiar, check 4.2.2.1 in \cite{EDA2009}.
+    \end{itemize} 
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsubsection{Davis-Putnam-Logemann-Loveland(DPLL)}
+DPLL is one of the typical Branch-and-bound algorithm, you should have good comprehension of what happens under the hood.
+
+\subsubsection{Explore}
+\begin{problem}{Self-study}{problem-label-SATSelf}
+\begin{enumerate}[(a)]
+    \item Check DIMACs format, know what does each line mean.
+    \item Try to find well-known SAT solver, list them below.
+    \item Try to use one of them to solve the problem you wrote above in the previous subsection.
+\end{enumerate}
+\end{problem}
+
+\vspace*{4\baselineskip}
+\subsubsection{Coding Practice}
+Implemented in C/C++\\
+Try to build a SAT solver yourself, the most simple version can be built by implementing exact simulation, which enumerates all the possible combination of the variables you listed above in the TT section.\\
+1. You need a parser to DIMACS format.\\
+2. Implement your solver.\\
+3. Compare the time cost with any of the solver you find on internet.\\
+4. Try to boost the efficiency of the solver using the method you have learnt during the class.
+
+\subsection{Binary Decision Diagram(BDD)}
+Binary Decision Diagram(BDD) is another clear expression of the boolean function, it is a powerful expression when modified to reduced and ordered.
+\begin{problem}{BDD \& ROBDD}{problem-label-4}
+\begin{enumerate}[(a)]
+    \item What is BDD? Draw a BDD based on the TT you draw in the TT section.
+    \item Write down the definition(math formula) of Shanno expression, compare the definition and the BDD you draw, can you explain the definition based on the BDD?
+    \item So based on the previous question, if you are using simple MUXes to implement this whole BDD, can you show one upper bound of how many MUXes on the longest path?
+    \begin{itemize}
+        \item This question helps understand Theorem 1, Bounds on Essential Critical Paths, THEORY OF EQUIOPTIMIZABLE ARRIVAL PATTERNS in \cite{EnablingExactDelaySynthesis}.
+    \end{itemize}
+    \item Is BDD canonical? If not, give an example.
+    \item When reduce a BDD, list all the three rules.
+    \item Is ROBDD canonical?
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsection{And-Inverter-Graph(AIG)}
+And-Inverter Graph(AIG) is one of the core structures in ABC and mocturtle, SOTA optimization method such as rewrite, refactor, balance and resubstitution are all implemented based on AIG.
+\begin{problem}{AIG format and representation}{problem-label-5}
+\begin{enumerate}[(a)]
+    \item Search for the standard AIG format.\\
+    Check Prof. Armin Biere's report \cite{AIGERFormat} on AIG format, there's also a new version \cite{Biere-FMV-TR-11-2}, but with only added up features, so pay attention to the old one.
+    \item What is structure hashing? 
+    \item After applying structure hashing, do you think there are still two nodes with same fanin? If not, do you think there are still two node with same functionality? If so, why?
+    \item Is AIG canonical? Why? If not, give an example.
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+
+\subsection{Majority-Inverter-Graph(MIG)}
+
+\subsection{XOR-And-Grpah(XAG)}
+
+\subsection{XOR-Majority-Graph(XMG)}
+
+\subsection{Basic Concept}
+\subsubsection{Transitive Fanin(TFI) Cone \& Transitive Fanout(TFO) Cone}
+This is a basic concept but barely used directly, try to relate this to support variables from functional perspective.
+\begin{itemize}
+    \item Also, try to think does it correct to define all the TFI leaves as support variables.
+\end{itemize}
+\subsubsection{Cut}
+Cut method is used regularly in most of the optimization in logic synthesis since global optimization is hard and local based method is needed. Have a clear understanding of the following concepts help comprehend most of the SOTA research.
+\begin{problem}{Cut in general}{problem-label-Cut}
+\begin{enumerate}[(a)]
+   \item Give the definition of \textit{K-feasible} cut and give an example on an AIG graph with \textit{K = 4}.
+   \item How many \textit{4-feasible} cut can you find on the AIG you provided? 
+   \item If you want to find a better candidate that could replace this cut, in a functional perspective, how many candidates could you find for a 4 variable function?
+   \item If the amount of function is too large, can you suppress it?
+   \begin{itemize}
+       \item This question is related to function classes, if you are interested, read \cite{HuangNPN}.
+   \end{itemize}
+
+   \item Can you filter out some of the cuts you provided from the previous question due to a threshold/criteria/cost function? Give an example.
+   \begin{itemize}
+       \item This question helps understand the concept of \textbf{priority cut}, if you are interested, check \cite{PriorityCuts}.
+       \item There's another cut called reconvergence-driven cut, it \textbf{tries} to maximize the number of condition such that fanouts from the same nodes meets again. Try to give a definition of reconvergence-driven cut, and compare your definition with the one in \cite{Mishchenko2006ScalableLS}. In addition, think why this is needed?
+   \end{itemize}
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsubsection{Maximum Fanout Free Cone(MFFC)}
+MFFC is essential, every time you have the chance to remove the pivot node, it allows you to remove the MFFC of the pivot.
+\begin{problem}{MFFC}{problem-label-MFFC}
+\begin{enumerate}[(a)]
+   \item Give the definition of MFFC by selecting nodes in an example aig graph.\\
+   You could try to use command \textit{print\_mffc} in ABC to check if you have selected the correct region.
+   \begin{itemize}
+       \item Based on the definition of the MFFC, can you provide a definition on Maximum Fanout Free Window(MFFW)? Check \cite{ZhuFFW} and see if you are correct.
+   \end{itemize}
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsection{Window}
+Window is essential in don't care based optimization.
+\begin{problem}{Window}{problem-label-window}
+\begin{enumerate}[{a}]
+    \item Try to draw one window in an AIG graph and give sedu-code on an algorithm that you would organize to automatically select the window in an AIG.
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+\end{document}
+
+

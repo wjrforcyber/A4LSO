@@ -1,0 +1,76 @@
+@online{Yosys,
+	author = {Claire Wolf},
+	title = {Yosys Open SYnthesis Suite},
+    year = 2024,
+	url = "\url{https://yosyshq.net/yosys/}"
+}
+
+@inproceedings{EnablingExactDelaySynthesis, author = {Amar\'{u}, Luca and Soeken, Mathias and Vuillod, Patrick and Luo, Jiong and Mishchenko, Alan and Gaillardon, Pierre-Emmanuel and Olson, Janet and Brayton, Robert and De Micheli, Giovanni}, title = {Enabling exact delay synthesis}, year = {2017}, publisher = {IEEE Press}, abstract = {Given (i) a Boolean function, (ii) a set of arrival times at the inputs, and (iii) a gate library with associated delay values, the exact delay synthesis problem asks for a circuit implementation which minimizes the arrival time at the output(s). The exact delay synthesis problem, with given input arrival times, relates to computing the communication complexity of a Boolean function, which is an intractable problem. Input arrival times are variable and can take any value, thereby making the exact delay synthesis search space infinite. This paper presents theory and algorithms for exact delay synthesis. We introduce the theory of equioptimizable arrival times, which allows us to partition all arrival time patterns into a finite set of equivalence classes. Thanks to this new theory, we create for the first time exact delay circuit databases covering all Boolean functions up to 5 variables and all possible arrival time patterns. We describe further arrival time compression techniques which enable the creation of larger databases. We propose an enhanced delay synthesis flow capable of dealing with large circuits, combining exact delay logic rewriting and Boolean optimization techniques, attaining unprecedented results. We improve 9/10 of the best known results in the EPFL arithmetic delay synthesis competition, outperforming previous best results up to 3x. Embedded in a commercial EDA flow for ASICs, our exact delay synthesis techniques reduce the total negative slack by 12.17\%, after physical implementation, at negligible area and runtime costs.}, booktitle = {Proceedings of the 36th International Conference on Computer-Aided Design}, pages = {352–359}, numpages = {8}, location = {Irvine, California}, series = {ICCAD '17} }
+
+
+@book{EDA2009, author = {Wang, Laung-Terng and Chang, Yao-Wen and Cheng, Kwang-Ting (Tim)}, title = {Electronic Design Automation: Synthesis, Verification, and Test}, year = {2009}, isbn = {9780080922003}, publisher = {Morgan Kaufmann Publishers Inc.}, address = {San Francisco, CA, USA}, abstract = {This book provides broad and comprehensive coverage of the entire EDA flow. EDA/VLSI practitioners and researchers in need of fluency in an "adjacent" field will find this an invaluable reference to the basic EDA concepts, principles, data structures, algorithms, and architectures for the design, verification, and test of VLSI circuits. Anyone who needs to learn the concepts, principles, data structures, algorithms, and architectures of the EDA flow will benefit from this book. Covers complete spectrum of the EDA flow, from ESL design modeling to logic/test synthesis, verification, physical design, and test - helps EDA newcomers to get "up-and-running" quickly Includes comprehensive coverage of EDA concepts, principles, data structures, algorithms, and architectures - helps all readers improve their VLSI design competence Contains latest advancements not yet available in other books, including Test compression, ESL design modeling, large-scale floorplanning, placement, routing, synthesis of clock and power/ground networks - helps readers to design/develop testable chips or products Includes industry best-practices wherever appropriate in most chapters - helps readers avoid costly mistakes Table of Contents Chapter 1: Introduction Chapter 2: Fundamentals of CMOS Design Chapter 3: Design for Testability Chapter 4: Fundamentals of Algorithms Chapter 5: Electronic System-Level Design and High-Level Synthesis Chapter 6: Logic Synthesis in a Nutshell Chapter 7: Test Synthesis Chapter 8: Logic and Circuit Simulation Chapter 9: Functional Verification Chapter 10: Floorplanning Chapter 11: Placement Chapter 12: Global and Detailed Routing Chapter 13: Synthesis of Clock and Power/Ground Networks Chapter 14: Fault Simulation and Test Generation.} }
+
+
+@online{AIGERFormat,
+  author = {Armin Biere},
+  title = {The AIGER And-Inverter Graph (AIG) Format Version 20071012},
+  year = 2007,
+  url = {https://fmv.jku.at/papers/Biere-FMV-TR-07-1.pdf}
+}
+
+@techreport{Biere-FMV-TR-11-2,
+  author = {Armin Biere and Keijo Heljanko and Siert Wieringa},
+  title = {{AIGER 1.9} And Beyond},
+  number = {11/2},
+  date = {July 2011},
+  institution = {Institute for Formal Models and Verification,
+    Johannes Kepler University},
+  address = {Altenbergerstr. 69, 4040 Linz, Austria},
+  year={2011},
+}
+
+@INPROCEEDINGS{HuangNPN,
+  author={Huang, Zheng and Wang, Lingli and Nasikovskiy, Yakov and Mishchenko, Alan},
+  booktitle={2013 International Conference on Field-Programmable Technology (FPT)}, 
+  title={Fast Boolean matching based on NPN classification}, 
+  year={2013},
+  volume={},
+  number={},
+  pages={310-313},
+  keywords={Boolean functions;Runtime;Algorithm design and analysis;Heuristic algorithms;Libraries;Data structures;Partitioning algorithms},
+  doi={10.1109/FPT.2013.6718374}}
+
+
+@inproceedings{PriorityCuts,
+author = {Mishchenko, Alan and Cho, Sungmin and Chatterjee, Satrajit and Brayton, Robert},
+title = {Combinational and sequential mapping with priority cuts},
+year = {2007},
+isbn = {1424413826},
+publisher = {IEEE Press},
+abstract = {An algorithm for technology mapping of combinational and sequential logic networks is proposed and applied to mapping into K-input lookup-tables (K-LUTs). The new algorithm avoids the hurdle of computing all K-input cuts while preserving the quality of the results, in terms of area and depth. The memory and runtime of the proposed algorithm are linear in circuit size and quite affordable even for large industrial designs. For example, computing a good quality 6-LUT mapping of an AIG with IM nodes takes 150Mb of RAM and 1 minute on a typical laptop. An extension of the algorithm allows for sequential mapping, which searches the combined space of all possible mappings and retimings. This leads to an 18--22\% improvement in depth with a 3--5\% LUT count penalty, compared to combinational mapping followed by retiming.},
+booktitle = {Proceedings of the 2007 IEEE/ACM International Conference on Computer-Aided Design},
+pages = {354–361},
+numpages = {8},
+location = {San Jose, California},
+series = {ICCAD '07}
+}
+
+@inproceedings{Mishchenko2006ScalableLS,
+  title={Scalable Logic Synthesis using a Simple Circuit Structure},
+  author={Alan Mishchenko and Robert K. Brayton},
+  year={2006},
+  url={https://api.semanticscholar.org/CorpusID:8597391}
+}
+
+@inproceedings{ZhuFFW,
+  author={Xuliang Zhu and Ruofei Tang and Lei Chen and Xing Li and Xin Huang and Mingxuan Yuan and Weihua Sheng and Jianliang Xu},
+  title={A Database Dependent Framework for K-Input Maximum Fanout-Free Window Rewriting},
+  year={2023},
+  cdate={1672531200000},
+  pages={1-6},
+  url={https://doi.org/10.1109/DAC56929.2023.10247727},
+  booktitle={DAC},
+}
+
+
+@inproceedings{EPFLCombBenchmark, title={The EPFL Combinational Benchmark Suite}, url={https://infoscience.epfl.ch/handle/20.500.14299/113476}, abstractNote={In this paper, we present the EPFL combinational benchmark suite. We aim at completing existing benchmark suites by focusing only on natively combinational benchmarks. The EPFL combinational benchmark suite consists of 23 combinational circuits designed to challenge modern logic optimization tools. It is further divided into three parts. The first part includes 10 arithmetic benchmarks, e.g., square-root, hypotenuse, divisor, multiplier etc.. The second part consists of 10 random/control benchmarks, e.g., round-robin arbiter, lookahead XY router, alu control unit, memory controller etc.. The third part contains 3 very large circuits, featuring more than ten million gates each. All benchmarks have a moderate number of inputs/outputs ranging from few tens to about one thousand. The EPFL benchmark suite is available to the public and distributed in all Verilog, VHDL, BLIF and AIGER formats. In addition to providing the benchmarks, we keep track of the best optimization results, mapped into LUT-6, for size and depth metrics. Better logic implementations can be submitted online. After combinational equivalence checking tests, the best LUT-6 realizations will be included in the benchmark suite together with the author’s name and affiliation.}, author={Amarù, Luca and Gaillardon, Pierre-Emmanuel and De Micheli, Giovanni}, year={2015}, journal={Proceedings of the 24th International Workshop on Logic & Synthesis (IWLS)} }
