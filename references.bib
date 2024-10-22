@@ -40,6 +40,36 @@
   keywords={Boolean functions;Runtime;Algorithm design and analysis;Heuristic algorithms;Libraries;Data structures;Partitioning algorithms},
   doi={10.1109/FPT.2013.6718374}}
 
+Majority
+@misc{MIGOri,
+  title = {Majority-Inverter Graph (MIG)},
+  howpublished = {\url{https://www.epfl.ch/labs/lsi/page-102566-en-html/mig/}},
+  year = 2014,
+  note = {Accessed: 2024-10-22}
+}
+
+Node type
+@inproceedings{FactoredCuts,
+author = {Mishchenko, Alan and Chatterjee, Satrajit and Brayton, Robert},
+title = {Improvements to technology mapping for LUT-based FPGAs},
+year = {2006},
+isbn = {1595932925},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1117201.1117208},
+doi = {10.1145/1117201.1117208},
+abstract = {The paper presents several improvements to state-of-the-art in FPGA technology mapping exemplified by a recent advanced technology mapper DAOmap [Chen and Cong, ICCAD '04]. Improved cut enumeration computes all K-feasible cuts without pruning for up to 7 inputs for the largest MCNC benchmarks. A new technique for on-the-fly cut dropping reduces by orders of magnitude memory needed to represent cuts for large designs. Improved area recovery leads to mappings with area on average 7\% smaller than DAOmap, while preserving delay optimality when starting from the same optimized netlists. Applying mapping with structural choices derived by a synthesis flow on average reduces delay by 7\% and area by 14\%, compared to DAOmap.},
+booktitle = {Proceedings of the 2006 ACM/SIGDA 14th International Symposium on Field Programmable Gate Arrays},
+pages = {41–49},
+numpages = {9},
+keywords = {FPGA, area recovery, cut enumeration, lossless synthesis, technology mapping},
+location = {Monterey, California, USA},
+series = {FPGA '06}
+}
+
+@misc{FFLC, title={Improving Standard-Cell Design Flow using Factored Form Optimization}, url={https://infoscience.epfl.ch/handle/20.500.14299/199379}, abstractNote={Factored form is a powerful multi-level representa- tion of a Boolean function that readily translates into an imple- mentation of the function in CMOS technology. In particular, the number of literals in a factored form correlates strongly with the number of transistors in the CMOS implementation. This paper develops novel methods for optimizing factored forms while working on the efficient and-inverter graph (AIG) representation of combinational logic. This is in contrast to the traditional logic synthesis based on logic networks, and other AIG-based methods that minimize the AIG nodes count. Experiments show that applying these methods helps to reduce the area after technology mapping by an additional 2.8% on average, compared to a high-effort area-oriented baseline. It is expected that deploying these methods as part of an industrial standard-cell design flow will reduce design costs and power consumption. Additionally, this work enables efficient transistor-level logic synthesis of large designs with various applications in design automation.}, author={Tempia Calvino, Alessandro and Mishchenko, Alan and Schmit, Herman and Mahintorabi, Ethan and Xu, Xiaoqing and De Micheli, Giovanni}, year={2023}, month={jul} }
+
+
 
 @inproceedings{PriorityCuts,
 author = {Mishchenko, Alan and Cho, Sungmin and Chatterjee, Satrajit and Brayton, Robert},
@@ -61,6 +91,14 @@ series = {ICCAD '07}
   year={2006},
   url={https://api.semanticscholar.org/CorpusID:8597391}
 }
+
+@phdthesis{TestaLS, address={Lausanne}, title={Data Structures and Algorithms for Logic Synthesis in Advanced Technologies}, url={https://infoscience.epfl.ch/handle/20.500.14299/171171}, DOI={10.5075/epfl-thesis-8164}, abstractNote={Logic synthesis is a key component of digital design and modern EDA tools; it is thus an essential instrument for the design of leading-edge chips and to push the limits of their performance. In the last decades, the electronic circuits community has evolved dramatically, facing many technological changes. Consequently, EDA and logic synthesis have adapted to accurately design the new generation of digital systems. In the present day, logic synthesis is an important area of research for two main reasons: (i) Diverse ways of computation, alternative to CMOS, have been presented in the last years. Post-silicon technologies have been shown to be feasible and may provide us with better electronic devices. Similarly, novel areas of applications are emerging, ranging from deep learning to cryptography applications. (ii) The current computing and storage means make it possible to solve exactly problems that were only approximated before. Moreover, new reasoning engines, covering from deep learning to new SAT-solvers, can be used as a mean of computation, thus possibly unlocking novel optimization opportunities. 
+
+The objective of this thesis is to advance state-of-the-art logic synthesis and present a variety of novel data structures and algorithms, addressing diverse types of applications in modern logic synthesis flows, considering standard CMOS design as well as emerging technology and cryptography. 
+
+Motivated by the many emerging technologies that implement majority gates, we first focus on majority-based logic synthesis. We present algorithms over the recently introduced majority-inverter graphs. First, a size optimization flow based on Boolean transformations is proposed. Then, we demonstrate how technology-dependent logic synthesis is an essential step for the abstraction of majority-based emerging technologies and, more important, their technological constraints. Moreover, we advance theoretical results on majority logic. In particular, we mainly focus on the problem of “‘how best can the n-argument majority function (majority-n) be realized with a network of 3-input majority gates?’”  . For this purpose, we present general upper bounds and decompositions, together with optimum results for majority-5 and -7 and best-known results for the majority-9. In the second part, we shift into more pragmatic results and show practical aspects of logic synthesis, designed to be successful in modern logic synthesis flows. We focus on XOR-based logic synthesis. Motivated by the novel computing capabilities, we propose an optimization flow based on the Boolean difference for area optimization of standard CMOS technologies. Finally, we establish a novel application of logic synthesis to cryptography. It has been demonstrated that the number of AND gates in a xor-and graph (XAG) correlates with the degree of vulnerability (security) of cryptography benchmarks and plays an important role for high-level cryptography protocols. We thus introduce a complete and automatic synthesis flow which consists of the main transformations of logic synthesis but aims instead at minimization of the number of AND gates over XAGs, obtaining significant results over cryptography benchmarks.
+
+We argue that given the progress and novel opportunities of technology, logic synthesis has to be revisited to consider the plurality of primitives and novel engines that can be of interest, and, consequently, the corresponding objective functions and optimisation problems.}, school={EPFL}, author={Testa, Eleonora}, year={2020}, keywords={Electronic design automation | logic synthesis | majority logic | emerging technologies}, language={en} }
 
 @inproceedings{ZhuFFW,
   author={Xuliang Zhu and Ruofei Tang and Lei Chen and Xing Li and Xin Huang and Mingxuan Yuan and Weihua Sheng and Jianliang Xu},

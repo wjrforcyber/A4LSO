@@ -99,6 +99,17 @@ And-Inverter Graph(AIG) is one of the core structures in ABC and mocturtle, SOTA
 
 
 \subsection{Majority-Inverter-Graph(MIG)}
+Majority graph is a novel representation, proviodes much more compact form than AIG, a direct overview of the representation of a case \textit{f51m} from MCNC benchmark could be seem here \cite{MIGOri}. The application was originally for emerging technology, we won't discuss here, however, in logic optimization perspective, it could also be used as a tie breaker. 
+\begin{problem}{MIG representation}{problem-label-MIG}
+\begin{enumerate}[(a)]
+    \item Give definition of \textit{n}-input(\textit{n} is odd) majority function.
+    \item As for an 3-input Majority gate support by \textit{a}, \textit{b} and  \textit{c}, see what would happen if the last variable \textit{c} is equal to \textit{0} or \textit{1}, what does the majority gate substitute to?
+    \item Based on the previous question, give the set relationship of the following homogeneous GIG(graph-inverter graph):\\
+    MIG,AOIG(AND/OR/INV) and AIG(AND/INV).
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
 
 \subsection{XOR-And-Grpah(XAG)}
 
@@ -110,6 +121,20 @@ This is a basic concept but barely used directly, try to relate this to support 
 \begin{itemize}
     \item Also, try to think does it correct to define all the TFI leaves as support variables.
 \end{itemize}
+
+\subsubsection{Nodes}
+There's not too much about nodes here instead of different types of representation or expression of the network holds different types of nodes. However, some basic concept such as \textbf{dag-node}, \textbf{tree-node}, will help you understand the concepts in cut(specifically factored cut) and Factored Form Literal Count(FFLC) under AIG context(You don't need to know about this now, we will discuss about it later.).
+\begin{problem}{Nodes-type}{problem-label-node}
+\begin{enumerate}[(a)]
+    \item Search for the definition of \textbf{dag-node} and \textbf{tree-node}. Draw a simple AIG and give example of both type of nodes.
+    \begin{itemize}
+        \item This helps understanding the concept of factored cuts in \cite{FactoredCuts} and FFLC in \cite{FFLC}.
+    \end{itemize}
+    \end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+
 \subsubsection{Cut}
 Cut method is used regularly in most of the optimization in logic synthesis since global optimization is hard and local based method is needed. Have a clear understanding of the following concepts help comprehend most of the SOTA research.
 \begin{problem}{Cut in general}{problem-label-Cut}
@@ -125,8 +150,9 @@ Cut method is used regularly in most of the optimization in logic synthesis sinc
    \item Can you filter out some of the cuts you provided from the previous question due to a threshold/criteria/cost function? Give an example.
    \begin{itemize}
        \item This question helps understand the concept of \textbf{priority cut}, if you are interested, check \cite{PriorityCuts}.
-       \item There's another cut called reconvergence-driven cut, it \textbf{tries} to maximize the number of condition such that fanouts from the same nodes meets again. Try to give a definition of reconvergence-driven cut, and compare your definition with the one in \cite{Mishchenko2006ScalableLS}. In addition, think why this is needed?
+       \item There's another cut called reconvergence-driven cut, it \textbf{tries} to maximize the number of condition such that fanouts from the same nodes meets again. Try to give a definition of reconvergence-driven cut, and compare your definition with the one in \cite{Mishchenko2006ScalableLS}. In addition, think why this is needed? And do you think this cut will always contain a reconvergence condition or just increase the possiblity of containing one?
    \end{itemize}
+   \item There are actually two ways to generate cuts, one is \textbf{bottom-up}, which is the most common one we see, another one is \textbf{top-down}(This two abstract definition is from \cite{TestaLS}.), which is the one we mentioned in node concept, called factored cuts. Try to think about what is the difference and the pros and cons of each method.
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
