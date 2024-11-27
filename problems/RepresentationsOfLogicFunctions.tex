@@ -1,3 +1,4 @@
+% !TEX root = ../main.tex
 \documentclass[main.tex]{subfiles}
 \begin{document}
 \section{Representations of Logic Functions}
@@ -8,6 +9,7 @@ Truth table(TT) is essential in logic synthesis, pay good attention even if you 
 This section gives a preview of TT, every answer should draw by hand, literal by literal, step by step.
 \begin{problem}{TT related}{problem-label-TT}
 \begin{enumerate}[(a)]
+    \item What is MSB abbreviated for under the context of endianness? What is Big-endian/Small-endian?
     \item Write down a full truth table for a 4 variable boolean function(complete boolean function), how many different combination of the elementary variables could you list here? And what about \emph{n} variables? How many input combination can you get?
     
     \item What you write above is the all possibilities of the elementary variables combination, from a function perspective, how many different functions could you produce under these combination? And why?
@@ -28,15 +30,27 @@ These concepts are easy but vital in later boolean optimization. It is better to
     \item What are SOP/DNF \& POS/CNF abbreviated for?
     \item As we can see above, TT is canonical, now, try to give a boolean function \textit{f}, prove that SOP representation is not canonical.
     \item Give an example and illustrate the SOP in cubes context.
+    \item What is an \textit{implicant}/\textit{clause}?
+    \item What is a \textit{prime implicant}/\textit{prime clause}?
+    \item Give the definition of \textit{disjunctive prime form}/\textit{conjunctive prime form}.
+    \item From proposition logic(PL) perspective, there's also a normal called NNF(Negation normal form), if you encounter with PL formulae in the future, you'll need NNF to convert it to DNF or CNF, check section 1.6 of \cite{CalculusOfComputation} if you are interested. 
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
+
+\subsubsection{Explore}
+\begin{problem}{Expression}{problem-label-Expression}
+\begin{enumerate}[(a)]
+    \item From proposition logic(PL) perspective, there's also a normal called NNF(Negation normal form), if you encounter with PL formulae in the future, you'll need NNF to convert it to DNF or CNF, check section 1.6 of \cite{CalculusOfComputation} if you are interested. 
+\end{enumerate}
+\end{problem}
 
 \subsection{CNF \& SAT solver}
 \subsubsection{SAT}
 SAT solver could be integrated into logic synthesis tool to power the optimization. Know the basic concepts under the hood will help with a good use.
 \begin{problem}{SAT}{problem-label-2}
 \begin{enumerate}[(a)]
+    \item What is \textit{"satisfiable}" under the context of boolean function?
     \item Explain why use CNF in SAT? Give an problem example that SAT can solve.
     \item SAT is optimization problem or decision problem? Can you illustrate the difference between optimization problem and decision problem?
     \begin{itemize}
