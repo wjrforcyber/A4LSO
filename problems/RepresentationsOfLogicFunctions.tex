@@ -3,37 +3,42 @@
 \begin{document}
 \section{Representations of Logic Functions}
 \subsection{Truth table}
-Truth table(TT) is essential in logic synthesis, pay good attention even if you think this is simple and easy to understand. Exact simulation is heavily used in logic synthesis tool ABC and mockturtle, you will see what happens behind the simulation method after solve following questions.
+Truth table(TT) is essential in logic synthesis, pay good attention even if you think this is simple and easy to understand. Exact simulation is heavily used in logic synthesis tool ABC and mockturtle, you will see what happens behind the simulation method after solving the following questions.
 
 \subsubsection{Direct view}
 This section gives a preview of TT, every answer should draw by hand, literal by literal, step by step.
 \begin{problem}{TT related}{problem-label-TT}
 \begin{enumerate}[(a)]
     \item What is MSB abbreviated for under the context of endianness? What is Big-endian/Small-endian?
-    \item Write down a full truth table for a 4 variable boolean function(complete boolean function), how many different combination of the elementary variables could you list here? And what about \emph{n} variables? How many input combination can you get?
+    \item Write down a full truth table for a 4 variable boolean function(complete boolean function), how many different combinations of the elementary variables could you list here? And what about the \emph{n} variables? How many input combination can you get?
     
     \item What you write above is the all possibilities of the elementary variables combination, from a function perspective, how many different functions could you produce under these combination? And why?
 
-    \item Can you show an example of an incomplete boolean function in TT? If so, can you try to simplify and show a better representation of this specific function in TT? If so, can you related the simplification to the don't care concept?
+    \item Can you show an example of an incomplete Boolean function in TT? If so, can you try to simplify and show a better representation of this specific function in TT? If so, can you related the simplification to the don't care concept?
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
 \subsubsection{Coding Practice}
-After finishing writing, look what you have written, how do you write it? Is there any pattern on the full list? Write down the pattern you see, and if you are going to implement this TT in C/C++, what would you do? Can you find a way to optimize your implementation so that the TT could take as less memory as possible?
+After finishing writing, look what you have written, how do you write it? Is there any pattern on the full list? Write down the pattern you see, and if you are going to implement this TT in C/C++, what would you do? Can you find a way to optimize your implementation so that the TT could take as little memory as possible?
 
 \subsection{SOP/DNF \& POS/CNF}
-These concepts are easy but vital in later boolean optimization. It is better to compare and remember, since these two concepts are contrary.
+These concepts are easy but vital in later Boolean optimization. It is better to compare and remember, since these two concepts are contrary.
 \begin{problem}{Expression}{problem-label-Expression}
 \begin{enumerate}[(a)]
-    \item Write down the De Morgan’s Law.
-    \item What is are the concept of literal/clause under the boolean context? Give an example.
+    \item Write down the De Morgan’s law.
+    \item What is the concept of literal/clause under the Boolean context? Give an example.
     \item What are SOP/DNF \& POS/CNF abbreviated for?
-    \item As we can see above, TT is canonical, now, try to give a boolean function \textit{f}, prove that SOP representation is not canonical.
-    \item Give an example and illustrate the SOP in cubes context.
+    \item As we can see above, TT is canonical; now, try to give a boolean function \textit{f}, and prove that the SOP representation is not canonical.
+    \item Give an example and illustrate the SOP in the cubes context.
     \item What is an \textit{implicant}/\textit{clause}?
     \item What is a \textit{prime implicant}/\textit{prime clause}?
     \item Give the definition of \textit{disjunctive prime form}/\textit{conjunctive prime form}.
-    \item From proposition logic(PL) perspective, there's also a normal called NNF(Negation normal form), if you encounter with PL formulae in the future, you'll need NNF to convert it to DNF or CNF, check section 1.6 of \cite{CalculusOfComputation} if you are interested. 
+    \item From proposition logic(PL) perspective, there is also a normal called NNF(Negation normal form), if you encounter with PL formulae in the future, you will need NNF to convert it to DNF or CNF, check Section 1.6 of \cite{CalculusOfComputation} if you are interested. 
+    \item When we are dealing with combinational problem, we usually transform the problem into CNF format. Give the definition of Tseitin transformation in your own words and consider the following propositional logic \cite{HandbookOfSAT}:
+    \[
+    \left( a \rightarrow \left(c \wedge d \right)\right) \vee  \left( b \rightarrow \left(c \wedge e \right)\right)
+    \]
+    Try to use Tseitin Transformation to encode it.
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
@@ -52,6 +57,7 @@ SAT solver could be integrated into logic synthesis tool to power the optimizati
 \begin{enumerate}[(a)]
     \item What is \textit{"satisfiable}" under the context of boolean function?
     \item Explain why use CNF in SAT? Give an problem example that SAT can solve.
+    \item 2-SAT and 3-SAT, which one is P and which one is NP-complete?
     \item SAT is optimization problem or decision problem? Can you illustrate the difference between optimization problem and decision problem?
     \begin{itemize}
         \item This question belongs to complexity classes, if you are not familiar, check 4.2.2.1 in \cite{EDA2009}.
@@ -193,5 +199,3 @@ Window is essential in don't care based optimization.
 \end{problem}
 \vspace*{4\baselineskip}
 \end{document}
-
-
