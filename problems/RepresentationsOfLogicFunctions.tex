@@ -51,17 +51,42 @@ These concepts are easy but vital in later Boolean optimization. It is better to
 \end{problem}
 
 \subsection{CNF \& SAT solver}
-\subsubsection{SAT}
+Most of the cases and example are from \cite{HandbookOfSAT}, strongly recommend to read the book before you start working on the problem.
+\subsubsection{SAT Basics}
 SAT solver could be integrated into logic synthesis tool to power the optimization. Know the basic concepts under the hood will help with a good use.
-\begin{problem}{SAT}{problem-label-2}
-\begin{enumerate}[(a)]
+\begin{problem}{SAT Basics}{problem-label-sATBasics}
+\begin{enumerate}[(1)]
     \item What is \textit{"satisfiable}" under the context of boolean function?
     \item Explain why use CNF in SAT? Give an problem example that SAT can solve.
     \item 2-SAT and 3-SAT, which one is P and which one is NP-complete?
     \item SAT is optimization problem or decision problem? Can you illustrate the difference between optimization problem and decision problem?
     \begin{itemize}
         \item This question belongs to complexity classes, if you are not familiar, check 4.2.2.1 in \cite{EDA2009}.
-    \end{itemize} 
+    \end{itemize}
+    \item What is 3-CNF? Give an example. Think if it is possible to convert any CNF to 3-CNF. Convert the example you gave to 3-CNF.
+    \begin{itemize}
+        \item This question helps understand the concept of 2.2.3 Transformation from CNF to 3-CNF in \cite{HandbookOfSAT}.
+    \end{itemize}
+    \item Given a set of varibles $ v_{1}\cdot\cdot\cdot v_{n} $, how to encode \textit{at-least-one} using \textit{direct encoding}? How about \textit{at-most-one}?
+    \item Given clauses $C_{i}$ and $C_{j}$ which contained in a CNF $\Delta$ where $P \in C_{i}$ and $\lnot P \in C_{j}$. Write down the \textit{resolvent} that obtained by \textit{resolving} $C_{i}$ and $C_{j}$.
+    \item Given a CNF $\begin{array}{r l}{\Delta={}}&{{}\{\;\{A,B,\lnot C\},\;\{\lnot A,D\},\;\{B,C,D\}\;\}}\end{array}$, give the result \textit{conditioning} on literal $C$ and $\lnot C$.
+\end{enumerate}
+\end{problem}
+\vspace*{4\baselineskip}
+
+\subsubsection{Complete Algorithm}
+\begin{problem}{Complete Algorithm}{problem-label-SATCompleteAlgorithm}
+\begin{enumerate}[(1)]
+    \item Give the result of \textit{exsitentially quantifying} variable $B$ from the CNF 
+    \[
+    \Delta=\{\;\{\neg A,B\},\{\neg B,C\}\;\}.
+    \]
+    \item What does \textit{DP algorithm} do? To better understanding the \textit{DP algorithm (dirtional resolution)}, given the variables order $C, B, A, D, E$, using \textit{bucket elimination} to process CNF:
+    \[
+    \Delta=\{\;\{\neg A,B\},\;\{\neg A,C\},\;\{\neg B,D\},\;\{\neg C,\neg D\},\;\{A,\neg C,E\}\;\},
+    \]
+    Also, try varibles order $E, A, B, C, D$, see how order affects the result.
+
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
