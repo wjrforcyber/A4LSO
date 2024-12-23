@@ -51,12 +51,12 @@ These concepts are easy but vital in later Boolean optimization. It is better to
 \end{problem}
 
 \subsection{CNF \& SAT solver}
-Most of the cases and example are from \cite{HandbookOfSAT}, strongly recommend to read the book before you start working on the problem.
+Most of the cases and examples in this section are from \cite{HandbookOfSAT}, strongly recommend to read the book before you start working on the problem.
 \subsubsection{SAT Basics}
 SAT solver could be integrated into logic synthesis tool to power the optimization. Know the basic concepts under the hood will help with a good use.
 \begin{problem}{SAT Basics}{problem-label-sATBasics}
 \begin{enumerate}[(1)]
-    \item What is \textit{"satisfiable}" under the context of boolean function?
+    \item What is \textit{``satisfiable"} under the context of boolean function?
     \item Explain why use CNF in SAT? Give an problem example that SAT can solve.
     \item 2-SAT and 3-SAT, which one is P and which one is NP-complete?
     \item SAT is optimization problem or decision problem? Can you illustrate the difference between optimization problem and decision problem?
@@ -86,22 +86,40 @@ SAT solver could be integrated into logic synthesis tool to power the optimizati
     \Delta=\{\;\{\neg A,B\},\;\{\neg A,C\},\;\{\neg B,D\},\;\{\neg C,\neg D\},\;\{A,\neg C,E\}\;\},
     \]
     Also, try varibles order $E, A, B, C, D$, see how order affects the result.
-
+    \item One of biggest problem of \textit{DP algorithm} is the space complexity, it generates too many clauses, which data structure can help ease the problem to \textit{symbolic SAT solving}?
+    \item It is important to decompose a large formulae into sub-formulae, like the concept of divide and conquer, so in the preprocessing stage of the \textit{St\text{\aa}lmarck's Algorithm}, 
+    the idea of transforming a formulae into conjunction of ``triplets" is proposed.
+    \begin{itemize} 
+        \item Transforming the following CNF into the form of triplets:
+    \[
+        \neg(({{a}}\Leftrightarrow b\wedge c)\wedge(b\Leftrightarrow\neg c)\wedge a)
+    \]
+    Triplet form is defined as $p\Leftrightarrow(q\otimes r)$.
+    \item Describe what are \textit{n-saturation} in \textit{St\text{\aa}lmarck's Algorithm}.
+    \end{itemize}
+    \item Comparing the basic inference rules in \textit{HeerHugo} and the \textit{0-saturation} rules in \textit{St\text{\aa}lmarck's Algorithm}, which set of rules are more powerful?
+    \item Use \textit{unit resolution technique} (\textit{unit propagation}) to generate the result of CNF:
+    \[
+        \Delta=\{\;\{\neg A,\neg B\},\;\{B,C\},\;\{\neg C,D\},\;\{A\}\;\},
+    \]
+    and CNF:
+    \[
+        \Delta=\{\;\{\neg A,\neg B\},\;\{B,C\},\;\{\neg C,D\},\;\{C\}\;\}.
+    \]
+    \item Algorithm \textit{DPLL} is based on \textit{chronological backtracking}. Describe the difference between \textit{chronological backtracking} and \textit{backtracking}.
+    \item What is the limitation of \textit{chronological backtracking}?
+    \item What process empowers \textit{unit resolution} to avoid repeating any mistakes in \textit{non-Chronological Backtracking}?
+    \item What is \textit{clause learning}?
+    \item Describe \textit{far backtracking}.
+    \item Given CNF $\Delta$:
+    \[
+        \begin{array}{l l}{1\cdot\{A,B\}}\\ {2\cdot\{B,C\}}\\ {3\cdot\{\lnot A, \lnot X, Y\}}\\{4\cdot\{\lnot A, X, Z\}}\\ {5\cdot\{\lnot A,\lnot Y,Z\}}\\ {6\cdot\{\lnot A, X, \lnot Z\}}\\ {7\cdot\{\lnot A,\lnot Y,\lnot Z\}}\end{array}
+    \]
+    and variable order $A, B, C, X, Y, Z$, draw an \textit{implication graph}, mark cuts which indicates the \textit{conflict sets}, and finally, give the \textit{conflict-driven clauses} based on the \textit{conflict sets}.
+    
 \end{enumerate}
 \end{problem}
 \vspace*{4\baselineskip}
-
-\subsubsection{Davis-Putnam-Logemann-Loveland(DPLL)}
-DPLL is one of the typical Branch-and-bound algorithm, you should have good comprehension of what happens under the hood.
-
-\subsubsection{Explore}
-\begin{problem}{Self-study}{problem-label-SATSelf}
-\begin{enumerate}[(a)]
-    \item Check DIMACs format, know what does each line mean.
-    \item Try to find well-known SAT solver, list them below.
-    \item Try to use one of them to solve the problem you wrote above in the previous subsection.
-\end{enumerate}
-\end{problem}
 
 \vspace*{4\baselineskip}
 \subsubsection{Coding Practice}
