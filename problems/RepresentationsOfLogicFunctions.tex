@@ -98,6 +98,11 @@ SAT solver could be integrated into logic synthesis tool to power the optimizati
     \item Describe what are \textit{n-saturation} in \textit{St\text{\aa}lmarck's Algorithm}.
     \end{itemize}
     \item Comparing the basic inference rules in \textit{HeerHugo} and the \textit{0-saturation} rules in \textit{St\text{\aa}lmarck's Algorithm}, which set of rules are more powerful?
+    \item Given the CNF:
+    \[
+        \Delta=\{\,\{\,\neg A,B\},\{\neg B,\neg C\},\{C,\neg D\}\,\}.
+    \]
+    and varible order $A, B, C ,D$. Draw the \textit{termination tree}.
     \item Use \textit{unit resolution technique} (\textit{unit propagation}) to generate the result of CNF:
     \[
         \Delta=\{\;\{\neg A,\neg B\},\;\{B,C\},\;\{\neg C,D\},\;\{A\}\;\},
@@ -111,6 +116,7 @@ SAT solver could be integrated into logic synthesis tool to power the optimizati
     \item What process empowers \textit{unit resolution} to avoid repeating any mistakes in \textit{non-Chronological Backtracking}?
     \item What is \textit{clause learning}?
     \item Describe \textit{far backtracking}.
+    \item What is the relation between a \textit{conflict set} and it's \textit{conflict driven clause}?
     \item Given CNF $\Delta$:
     \[
         \begin{array}{l l}{1\cdot\{A,B\}}\\ {2\cdot\{B,C\}}\\ {3\cdot\{\lnot A, \lnot X, Y\}}\\{4\cdot\{\lnot A, X, Z\}}\\ {5\cdot\{\lnot A,\lnot Y,Z\}}\\ {6\cdot\{\lnot A, X, \lnot Z\}}\\ {7\cdot\{\lnot A,\lnot Y,\lnot Z\}}\end{array}
